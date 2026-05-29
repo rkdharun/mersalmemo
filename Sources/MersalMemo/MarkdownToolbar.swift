@@ -30,6 +30,7 @@ struct MarkdownToolbar: View {
                 FmtBtn("photo",                tip: "Insert Image", .image)
             }
             .padding(.horizontal, 8)
+            .fixedSize(horizontal: true, vertical: false)
         }
         .frame(height: 30)
         .background(Color(.windowBackgroundColor))
