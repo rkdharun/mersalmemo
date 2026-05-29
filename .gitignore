@@ -1,0 +1,6 @@
+.build/
+*.o
+*.d
+MersalMemo.app/
+.DS_Store
+.claude/
