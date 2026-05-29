@@ -2,36 +2,36 @@ import SwiftUI
 
 struct MarkdownToolbar: View {
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 1) {
-                // Inline styles
-                FmtBtn("bold",           tip: "Bold (⌘B)",          .bold)
-                FmtBtn("italic",         tip: "Italic (⌘I)",         .italic)
-                FmtBtn("strikethrough",  tip: "Strikethrough",        .strikethrough)
-                FmtBtn("chevron.left.forwardslash.chevron.right",
-                                         tip: "Inline Code",          .inlineCode)
-                FmtBtn("square.filled.on.square",
-                                         tip: "Code Block",           .codeBlock)
+        HStack(spacing: 1) {
+            // Inline styles
+            FmtBtn("bold",           tip: "Bold (⌘B)",          .bold)
+            FmtBtn("italic",         tip: "Italic (⌘I)",         .italic)
+            FmtBtn("strikethrough",  tip: "Strikethrough",        .strikethrough)
+            FmtBtn("chevron.left.forwardslash.chevron.right",
+                                     tip: "Inline Code",          .inlineCode)
+            FmtBtn("square.filled.on.square",
+                                     tip: "Code Block",           .codeBlock)
 
-                sep
+            sep
 
-                // Headings
-                TxtBtn("H1", tip: "Heading 1", .h1)
-                TxtBtn("H2", tip: "Heading 2", .h2)
-                TxtBtn("H3", tip: "Heading 3", .h3)
+            // Headings
+            TxtBtn("H1", tip: "Heading 1", .h1)
+            TxtBtn("H2", tip: "Heading 2", .h2)
+            TxtBtn("H3", tip: "Heading 3", .h3)
 
-                sep
+            sep
 
-                // Block
-                FmtBtn("text.quote",          tip: "Blockquote",  .blockquote)
-                FmtBtn("list.bullet",          tip: "List Item",   .listItem)
-                FmtBtn("checklist",            tip: "Checklist",   .checklist)
-                FmtBtn("link",                 tip: "Link",        .link)
-                FmtBtn("photo",                tip: "Insert Image", .image)
-            }
-            .padding(.horizontal, 8)
-            .fixedSize(horizontal: true, vertical: false)
+            // Block
+            FmtBtn("text.quote",          tip: "Blockquote",  .blockquote)
+            FmtBtn("list.bullet",          tip: "List Item",   .listItem)
+            FmtBtn("checklist",            tip: "Checklist",   .checklist)
+            FmtBtn("link",                 tip: "Link",        .link)
+            FmtBtn("photo",                tip: "Insert Image", .image)
+
+            Spacer(minLength: 0)
         }
+        .padding(.horizontal, 8)
+        .clipped()
         .frame(height: 30)
         .background(Color(.windowBackgroundColor))
         .overlay(Divider(), alignment: .top)
